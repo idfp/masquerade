@@ -1,5 +1,5 @@
 # Executable Masquerading
-Generate an executable that acts like a normal file (JPG, PDF, DOCX etc) with the file data embedded directly inside PE. Made for spearphishing and personally I think this is effective (kinda). Built with Nim cause why not, and I terribly hate c++.
+Generate an executable that acts like a normal file (JPG, PDF, DOCX etc) with the file data embedded directly inside PE. Made for spearphishing and personally I think this is effective (kinda). Built with Nim cause why not, I terribly hate C++ anyway.
 
 > Disclaimer: <br>
 > This tool is not intended for any illegal phishing attack, I made it specifically for my own usage in red-team demonstration and for other fellow red-teamer.
@@ -7,7 +7,7 @@ Generate an executable that acts like a normal file (JPG, PDF, DOCX etc) with th
 
 ## Usage
 ```bash
-masquarade.exe [OPTIONS] <targetfile>
+masquerade.exe [OPTIONS] <targetfile>
 Options:
 
     Basic:
@@ -40,11 +40,11 @@ Example: <br>
 
 Generate an executable that loads pict.jpg when being run, and execute payload `test.exe` through reflective PE injection.
 ```sh
-masquarade.exe --payload=test.exe --type=ReflectivePE pict.jpg
+masquerade.exe --payload=test.exe --type=ReflectivePE pict.jpg
 ```
 Generate the same thing, but write output file into `totally-not-suspicious.jpg.scr`
 ```sh
-masquarade.exe --payload=test.exe --type=ReflectivePE --output=totally-not-suspicious.jpg pict.jpg
+masquerade.exe --payload=test.exe --type=ReflectivePE --output=totally-not-suspicious.jpg pict.jpg
 ```
 
 ## Installation / Building
