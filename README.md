@@ -5,6 +5,8 @@ Generate an executable that acts like a normal file (JPG, PDF, DOCX etc) with th
 > This tool is not intended for any illegal phishing attack, I made it specifically for my own usage in red-team demonstration and for other fellow red-teamer.
 > Of course, in that way, all actions anyone done with this tool have nothing to do with me. And I highly discourage the very usage of this tool (cause, well, even if u're a legal pentester ur client will most likely despise spearphishing attacks).
 
+![](https://github.com/idfp/masquerade/blob/main/assets/demo.gif)
+
 ## Usage
 ```bash
 masquerade.exe [OPTIONS] <targetfile>
