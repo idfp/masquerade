@@ -6,7 +6,11 @@ Generate an executable that acts like a normal file (JPG, PDF, DOCX etc) with th
 > Of course, in that way, all actions anyone done with this tool have nothing to do with me. And I highly discourage the very usage of this tool (cause, well, even if u're a legal pentester ur client will most likely despise spearphishing attacks).
 
 ![](https://github.com/idfp/masquerade/blob/main/assets/demo.gif)
-
+## TODO:
+- Linux environment supports (not linux based payloads.)
+- Self Cleaning function (delete executable after execution and replace it with normal files.)
+- Document known limitations.
+- Write better use cases.
 ## Usage
 ```bash
 masquerade.exe [OPTIONS] <targetfile>
