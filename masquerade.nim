@@ -27,8 +27,8 @@ var Ext:string = "scr"
 var Randomlength:int = 0
 
 proc showHelp():void =
-    echo """Usage: screxec.exe [OPTIONS] (Target File)
-Ex: screxec.exe --payload=payload.exe --type=ReflectivePE pict.jpg
+    echo """Usage: masquerade.exe [OPTIONS] (Target File)
+Ex: masquerade.exe --payload=payload.exe --type=ReflectivePE pict.jpg
 Options:
 
     Basic:
