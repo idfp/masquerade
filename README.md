@@ -57,7 +57,7 @@ masquerade.exe --payload=test.exe --type=ReflectivePE --output=totally-not-suspi
 Make sure you have nim compiler loaded into your windows PATH plus its dependencies (mingw for compiling c / c++).
 Then install all dependencies with nimble:
 ```bash
-nimble install winim
+nimble install winim ptr_math
 ```
 Build `masquerade.nim` with this command:
 ```bash
