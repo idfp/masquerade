@@ -46,11 +46,11 @@ Example: <br>
 
 Generate an executable that loads pict.jpg when being run, and execute payload `test.exe` through reflective PE injection.
 ```sh
-masquerade.exe --payload=test.exe --type=ReflectivePE pict.jpg
+masquerade.exe --payload="test.exe" --type="ReflectivePE" pict.jpg
 ```
 Generate the same thing, but write output file into `totally-not-suspicious.jpg.scr`
 ```sh
-masquerade.exe --payload=test.exe --type=ReflectivePE --output=totally-not-suspicious.jpg pict.jpg
+masquerade.exe --payload="test.exe" --type="ReflectivePE" --output="totally-not-suspicious.jpg" pict.jpg
 ```
 
 ## Installation / Building
